@@ -1,4 +1,6 @@
 async function submitInfo(){
+  let processingText = document.getElementById('processingText');
+  processingText.style.display = 'block';
   //Select elements
   let country = document.getElementById('countryInput').value;
   let city = document.getElementById('cityInput').value;
@@ -21,6 +23,11 @@ async function submitInfo(){
   if(error === null){
     setResults(info.daily.data[0], units);
   }
+  let result = document.getElementsByClassName('result');
+  for(let i = 0; i < result.length; i++){
+    result[i].style.display = 'flex';
+  }
+  processingText.style.display = 'none';
 }
 
 async function makeRequest(country, city, date, units){
@@ -118,7 +125,7 @@ function setForecast(iconString, summary){
       image.src = 'images/Cloudy.png';
       break;
     case 'wind':
-      image.src = 'images/Cloudy.png';
+      image.src = 'images/PartlyCloudy.png';
       break;
     case 'fog':
       image.src = 'images/Cloudy.png';

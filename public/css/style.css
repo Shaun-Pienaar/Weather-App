@@ -1,8 +1,16 @@
 body{
   margin: 0;
   padding: 0;
+  padding-bottom: 3%;
   background-color: rgb(154, 223, 200);
   text-align: center;
+  align-items: center;
+  justify-items: center;
+}
+
+#processingText{
+  color: darkblue;
+  display: none;
 }
 
 input{
@@ -89,10 +97,10 @@ h2{
 }
 
 .result{
-  display: flex;
   justify-content: center;
   align-items: center;
   font-size: 200%;
+  display: none;
 }
 
 #tempMinContainer, #tempMaxContainer{
