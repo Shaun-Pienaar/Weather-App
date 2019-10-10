@@ -1,0 +1,25 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Small web application to get the weather at a given time and place",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "weather"
+  ],
+  "author": "Shaun Pienaar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  },
+  "engines": {
+    "node": "8.11.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.1.0"
+  }
+}

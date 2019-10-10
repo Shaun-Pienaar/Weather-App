@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/script.js"></script>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <h1 id="heading">Weather</h1>
+    <div id="inputForm">
+      <label for="countryInput" id="countryLabel">Country:</label>
+      <input type="text" name="countryInput" id="countryInput">
+      <label for="cityInput" id="cityLabel">City:</label>
+      <input type="text" name="cityInput" id="cityInput">
+      <label for="dateInput" id="dateLabel">Date:</label>
+      <input type="date" name="dateInput" id="dateInput">
+      <label for="units" id="unitLabel">Units:</label>
+      <input type="radio" name="units" id="unit1" value="metric" checked>
+      <label id="unit1Label">metric</label>
+      <input type="radio" name="units" id="unit2" value="imperial">
+      <label id="unit2Label">imperial</label>
+      <button id="submit" onclick="submitInfo()">Submit</button>
+    </div>
+    <h2><u>Forecast</u></h2>
+    <div id="forecast" class="result">
+      <img id="forecastImage" src="images/Sunny.png" alt="Image unavailable" width="100px" height="100px">
+      <p id="forecastText">Sunny throughout the day</p>
+    </div>
+    <h3><u>Temperature</u></h3>
+    <div id="temperature" class="result">
+      <img id="temperatureImage" src="images/Mediumtemp.png" alt="Temp:" width="50px" height="75px">
+      <div id="tempMinContainer">
+        <p id="temperatureMinText">Min: 10</p>
+        <img id="temperatureMinImage" src="images/celcius.png" alt="C" width="20px" height="20px">
+      </div>
+      <div id="tempMaxContainer">
+        <p id="temperatureMaxText">Max: 28</p>
+        <img id="temperatureMaxImage" src="images/celcius.png" alt="C" width="20px" height="20px">
+      </div>
+    </div>
+    <h3><u>Precipitation</u></h3>
+    <div id="percipitation" class="result">
+      <img id="percipitationImage" src="images/Rain.png" alt="Rain" width="100px" height="100px">
+      <p id="percipitationText">35% chance for rain</p>
+    </div>
+    <h3><u>Wind</u></h3>
+    <div id="wind" class="result">
+      <p id="windText">32 meters per second</p>
+      <img id="windImage" src="images/N.png" alt="North" width="70px" height="70px">
+    </div>
+    <h3><u>Humidity</u></h3>
+    <div id="humidity" class="result">
+      <p id="humidityText">0.45g per cubic meter</p>
+    </div>
+    <h3><u>Sunrise</u></h3>
+    <div id="sunrise" class="result">
+      <p id="sunriseText">Time: 5:46am</p>
+    </div>
+    <h3><u>Sunset</u></h3>
+    <div id="sunset" class="result">
+      <p id="sunsetText">Time: 6:46pm</p>
+    </div>
+  </body>
+</html>

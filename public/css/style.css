@@ -1,0 +1,149 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: rgb(154, 223, 200);
+  text-align: center;
+}
+
+input{
+  background-color: rgb(176, 199, 199);
+}
+
+input:focus{
+  background-color: rgb(185, 183, 183);
+  color: rgb(39, 56, 50);
+}
+
+#inputForm{
+  display: grid;
+  grid-template-areas: "CL CL C C C C cL cL c c c c dL dL d d d d"
+                       ". . . . uL uL . u1 u1L u1L u2 u2L u2L . . . . ."
+                       ". . . . . . . . btn btn . . . . . . . .";
+  column-gap: 1%;
+  row-gap: 3vh;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+#submit{
+  margin: 2%;
+  font-weight: bold;
+  grid-area: btn;
+}
+
+#countryInput{
+  max-width: 140px;
+  grid-area: C;
+}
+
+#cityInput{
+  max-width: 140px;
+  grid-area: c;
+}
+
+#dateInput{
+  max-width: 140px;
+  grid-area: d;
+}
+
+#unit1{
+  grid-area: u1;
+}
+
+#unit2{
+  grid-area: u2;
+}
+
+#countryLabel{
+  grid-area: CL;
+}
+
+#cityLabel{
+  grid-area: cL;
+}
+
+#dateLabel{
+  grid-area: dL;
+}
+
+#unitLabel{
+  grid-area: uL;
+}
+
+#unit1Label{
+  grid-area: u1L;
+}
+
+#unit2Label{
+  grid-area: u2L;
+}
+
+label{
+  font-weight: bold;
+}
+
+h2{
+  margin-top: 4%;
+}
+
+.result{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 200%;
+}
+
+#tempMinContainer, #tempMaxContainer{
+  display: flex;
+}
+
+#temperatureMinImage, #temperatureMaxImage{
+  margin-top: 40px;
+}
+
+#temperatureMinText, #temperatureMaxText{
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+img{
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+@media screen and (max-width: 650px){
+  #inputForm{
+    grid-template-areas: "CL CL CL C C C C C C cL cL cL c c c c c c"
+                         "dL dL dL d d d d d d uL uL . u1 u1L u1L u2 u2L u2L"
+                         ". . . . . . . . btn btn . . . . . . . .";
+  }
+}
+
+@media screen and (max-width: 500px){
+  .result{
+    font-size: 150%;
+  }
+  #temperatureMinImage, #temperatureMaxImage{
+    margin-top: 28px;
+    height: 25%;
+  }
+}
+
+@media screen and (max-width: 465px){
+  #inputForm{
+    grid-template-areas: ". . CL CL CL C C C C C ."
+                         ". . cL cL cL c c c c c ."
+                         ". . dL dL dL d d d d d ."
+                         ". . . uL u1 u1L . u2 u2L . ."
+                         ". . . . . btn . . . . .";
+  }
+}
+
+@media screen and (max-width: 400px){
+  .result{
+    flex-direction: column;
+    align-items: center;
+  }
+}
