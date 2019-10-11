@@ -1,5 +1,7 @@
 async function submitInfo(){
   let processingText = document.getElementById('processingText');
+  processingText.innerHTML = 'Processing';
+  processingText.style.color = 'darkblue';
   processingText.style.display = 'block';
   //Select elements
   let country = document.getElementById('countryInput').value;
@@ -22,12 +24,12 @@ async function submitInfo(){
   //Display result
   if(error === null){
     setResults(info.daily.data[0], units);
+    let result = document.getElementsByClassName('result');
+    for(let i = 0; i < result.length; i++){
+      result[i].style.display = 'flex';
+    }
+    processingText.style.display = 'none';
   }
-  let result = document.getElementsByClassName('result');
-  for(let i = 0; i < result.length; i++){
-    result[i].style.display = 'flex';
-  }
-  processingText.style.display = 'none';
 }
 
 async function makeRequest(country, city, date, units){
@@ -66,7 +68,7 @@ async function readResponse(res){
 }
 
 function handleErrors(info){
-  let output = document.getElementById('forecast');
+  let output = document.getElementById('processingText');
   if(info === 1){
     output.style.color = 'red';
     output.innerHTML = 'Incomplete or incorrect parameters';
@@ -175,7 +177,12 @@ function setPercipitation(probability, type){
       image.alt = 'Rain';
       break;
   }
-  text.innerHTML = Math.round(probability * 100) + '% chance for ' + type;
+  if(type = undefined){
+    text.innerHTML = '0% chance for rain';
+  }
+  else{
+    text.innerHTML = Math.round(probability * 100) + '% chance for ' + type;
+  }
 }
 
 function setWind(speed, bearing, units){
@@ -232,11 +239,11 @@ function setSunTime(sunrise, sunset){
   let dateTime = toDateTime(sunrise);
   let hours = dateTime.getHours();
   let minutes = dateTime.getMinutes();
-  sunriseText.innerHTML = 'Time: ' + hours + ':' + minutes + 'am GMT';
+  sunriseText.innerHTML = 'Time: ' + hours + ':' + minutes + ' GMT';
   dateTime = toDateTime(sunset);
   hours = dateTime.getHours();
   minutes = dateTime.getMinutes();
-  sunsetText.innerHTML = 'Time: ' + hours + ':' + minutes + 'pm GMT';
+  sunsetText.innerHTML = 'Time: ' + hours + ':' + minutes + ' GMT';
 }
 
 function toDateTime(secs) {
