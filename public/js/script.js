@@ -177,8 +177,8 @@ function setPercipitation(probability, type){
       image.alt = 'Rain';
       break;
   }
-  if(type = undefined){
-    text.innerHTML = '0% chance for rain';
+  if(type === undefined){
+    text.innerHTML = Math.round(probability * 100) + '% chance for rain';
   }
   else{
     text.innerHTML = Math.round(probability * 100) + '% chance for ' + type;
